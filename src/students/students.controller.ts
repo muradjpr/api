@@ -7,9 +7,8 @@ import { AuthGuard } from '@nestjs/passport';
 export class StudentController {
   constructor(private stdService: StudentsService) {}
 
-  @Get()
-  @UseGuards(AuthGuard('jwt'))
+  @Get('get-all')
   getAll() {
-    return this.stdService.getAllStudents();
+    return this.stdService.getAll();
   }
 }
